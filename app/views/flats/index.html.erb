@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My simple RbnB</a>
+    <button class="navbar-toggler" type="button" class="btn btn-primary"></button>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>All our flats</h1>
+  <br>
+  <div class="card" style="width: 18rem;">
+   <%= @flats.each do |flat|%>
+    <div class="card-body">
+      <h5 class="card-title"><%= flat.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+      <p class="card-text"><%= flat.description %></p>
+      <div class="price-guests">
+        <p class="card-text"><%= flat.price_per_night %>$/nights</p>
+        <br>
+        <p class="card-text">for<%= flat.number_of_guests %>guests</p>
+      </div>
+      <a href="#" class="card-link">see more...</a>
+    </div>
+   <% end %>
+  </div>
+</div>
